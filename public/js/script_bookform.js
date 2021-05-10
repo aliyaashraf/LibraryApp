@@ -1,15 +1,16 @@
 var title = document.getElementById("title");
 var author = document.getElementById("author");
 var genre = document.getElementById("genre");
+var desc = document.getElementById("desc");
 
 function validate(){
-    let regexp = /^([a-zA-Z])+$/;
+    let regexp = /^[a-zA-Z\s]*$/;
     
-    if(title.value.trim() == "" || author.value.trim() == "" || genre.value.trim() == ""){
+    if(title.value.trim() == "" || author.value.trim() == "" || genre.value.trim() == "" || desc.value.trim() == ""){
         alert("Fields cannot be empty!");
         return false;
     }
-    else if(regexp.test(title.value) && regexp.test(author.value) && regexp.test(genre.value)){
+    else if(regexp.test(title.value) && regexp.test(author.value) && regexp.test(genre.value) && regexp.test(desc.value)){
         return true;
     }
     else{
@@ -18,7 +19,7 @@ function validate(){
     }
 }
 function valid_title(){
-    let regexp = /^([a-z A-Z])+$/;
+    let regexp = /^[a-zA-Z\s]*$/;
     if(regexp.test(title.value)){
         title.style.border= "3px solid green";
         p1.innerHTML = "Valid!";
@@ -31,7 +32,7 @@ function valid_title(){
     }
 }
 function valid_author(){
-    let regexp = /^([a-z A-Z])+$/;
+    let regexp = /^[a-zA-Z\s]*$/;
     if(regexp.test(author.value)){
         author.style.border= "3px solid green";
         p2.innerHTML = "Valid!";
@@ -44,7 +45,7 @@ function valid_author(){
     }
 }
 function valid_genre(){
-    let regexp = /^([a-z A-Z])+$/;
+    let regexp = /^[a-zA-Z\s]*$/;
     if(regexp.test(genre.value)){
         genre.style.border= "3px solid green";
         p3.innerHTML = "Valid!";
@@ -54,5 +55,18 @@ function valid_genre(){
         genre.style.border= "3px solid red";
         p3.innerHTML = "Invalid!";
         p3.style.color = "red";
+    }
+}
+function valid_desc(){
+    let regexp = /^[\sa-zA-Z\s]+[.?!,':;"-]*$/;
+    if(regexp.test(desc.value)){
+        desc.style.border= "3px solid green";
+        p4.innerHTML = "Valid!";
+        p4.style.color = "green";
+    }
+    else{
+        desc.style.border= "3px solid red";
+        p4.innerHTML = "Invalid!";
+        p4.style.color = "red";
     }
 }

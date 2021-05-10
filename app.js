@@ -1,24 +1,6 @@
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 5000;
-// const nav = [
-//   {
-//     link: "/books",
-//     name: "Books",
-//   },
-//   {
-//     link: "/authors",
-//     name: "Authors",
-//   },
-//   {
-//     link: "/addbook",
-//     name: "Add New Book"
-//   },
-//   {
-//     link: "/login",
-//     name: "Log In"
-//   }
-// ];
 
 const nav1 =  [
   {link: '/login', name:'Log In'},
@@ -35,7 +17,7 @@ const nav4 =  [
   {link: '/authors', name:'Authors'},
   {link: '/addbook', name:'Add New Book'},
   {link: '/addauthor', name: 'Add New Author'},
-  {link: '/login', name:'Log Out'}
+  {link: '/index', name:'Log Out'}
 ]
 
 const booksRouter = require("./src/routes/bookroutes")(nav4);
@@ -44,6 +26,8 @@ const addbookRouter = require("./src/routes/addbookroutes")(nav4);
 const addauthorRouter = require("./src/routes/addauthorroutes")(nav4);
 const signupRouter = require("./src/routes/signuproutes")(nav2);
 const loginRouter = require("./src/routes/loginroutes")(nav3);
+
+app.use(express.urlencoded({extended:true}));
 app.use(express.static("./public"));
 app.set("view engine", "ejs");
 app.set("views", "./src/views");

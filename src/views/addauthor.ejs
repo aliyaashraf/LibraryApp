@@ -111,23 +111,23 @@
           </div>
         
           <hr> -->
-          <form action = "/authors" onsubmit="return validate();">
+          <form method= "POST" action= "/addauthor/add" onsubmit="return validate();">
             <div class="form-row">
               <div class="form-group col-md-12">
                 <label for="title">Authors name</label>
-                <input type="text" class="form-control" placeholder="Enter Author" id="title[[[[[[[[[[[[[["  onkeyup="valid_title();">
+                <input type="text" class="form-control" name="author" placeholder="Enter Author" id="title"  onkeyup="valid_title();">
                 <p id="p1"></p>
               </div>
             </div>
             <div class="form-group col-md-12 field">
               <label for="inputPassword4">Well known books</label>
-              <input type="text" class="form-control" placeholder="Enter popular books" id="author" onkeyup="valid_author();">
+              <input type="text" class="form-control" name="Wellknownbooks" placeholder="Enter popular books" id="author" onkeyup="valid_author();">
               <p id="p2"></p>
             </div>
             
             <div class="form-group col-md-12">
               <label class="input-group-text" for="inputGroupFile02">Choose Authors image</label>
-              <input type="file" class="form-control" id="inputGroupFile02" accept="image/*" required>
+              <input type="file" class="form-control" name="image" id="inputGroupFile02" accept="image/*" required>
             </div>
             <div class="form-group col-md-12">
             <button type="submit" class="btn btn-primary">Submit</button>
