@@ -1,6 +1,6 @@
 const express = require("express");
 const authorsRouter = express.Router();
-const Bookdata = require("../modal/Bookdata");
+const Authordata = require("../modal/Authordata");
 function router(nav) {
   // var authors = [
   //   {
@@ -23,7 +23,7 @@ function router(nav) {
   //   },
   // ];
   authorsRouter.get("/", function (req, res) {
-    Bookdata.find().then(function (authors) {
+    Authordata.find().then(function (authors) {
       res.render("authors", {
         nav,
         title: "Library",
@@ -35,7 +35,7 @@ function router(nav) {
   //for accessign from url we use colon :
   authorsRouter.get("/:id", function (req, res) {
     const id = req.params.id;
-    Bookdata.findOne({_id:id})
+    Authordata.findOne({_id:id})
     .then(function(author){
       res.render("author", {
         nav,

@@ -7,14 +7,13 @@ mongoose.connect('mongodb+srv://userone:userone@ictakfiles.il9ag.mongodb.net/Lib
 
 //schema definition
 const Schema = mongoose.Schema;
-const BookSchema = new Schema({
-    title: String,
-    author: String,
-    genre: String,
-    description: String,
+const AuthorSchema = new Schema({
+    aname: String,
+    books: String,
+    desc: String,
     image: String  
 });
 
 //model creation
-var Bookdata= mongoose.model('bookdata',BookSchema);
-module.exports = Bookdata;
+var Authordata= mongoose.model('authordata',AuthorSchema);
+module.exports = Authordata;

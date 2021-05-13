@@ -99,12 +99,12 @@
               <a class="story-title" href="#"><img alt="" src="/images/<%=authors[i].image%>" style="width:100px;height:100px" class="img-circle"></a>
             </div>
             <div class="col-md-10 col-sm-9">
-              <h3><%=authors[i].title%></h3>
+              <h3><%=authors[i].aname%></h3>
               <div class="row">
                 <div class="col-xs-9">
-                  <h4><span class="label label-default"><%=authors[i].wellknownbooks%></span></h4><h4>
-                  <small style="font-family:courier,'new courier';" class="text-muted"><a href="/authors/<%=authors[i]._id%>" class="text-muted">• Read More</a></small>
-                  </h4></div>
+                  <h4><span class="label label-default"><%=authors[i].books%></span></h4>
+                  •  <a href="/authors/<%=authors[i]._id%>" class="text-muted">Read More</a></small>
+                  </div>
                 <div class="col-xs-3"></div>
               </div>
               <br><br>
