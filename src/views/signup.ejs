@@ -84,16 +84,16 @@
           
           
           <!--/stories-->
-            <form action = "/welcome" onsubmit="return validate();">
+            <form method="POST" action = "/signup/user" onsubmit="return validate();">
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="inputEmail4">Email</label>
-                  <input type="email" class="form-control" autocomplete="off" placeholder="Enter your email id" id="inputEmail4" onkeyup="valid_email();">
+                  <input type="email" name="email" class="form-control" autocomplete="off" placeholder="Enter your email id" id="inputEmail4" onkeyup="valid_email();">
                   <p id="p1"></p>
                 </div>
                 <div class="form-group col-md-6 field">
                   <label for="inputPassword4">Password</label>
-                  <input type="password" class="form-control" autocomplete="off" placeholder="Enter your password" id="inputPassword4" onkeyup="valid_pwd();">
+                  <input type="password" name="password" class="form-control" autocomplete="off" placeholder="Enter your password" id="inputPassword4" onkeyup="valid_pwd();">
                  
                   <div class="indicator">
                     <span class="weak"></span>
@@ -105,17 +105,17 @@
               </div>
               <div class="form-group col-md-12">
                 <label for="inputAddress">Address</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="House/Apt Name, Landmark, Location">
+                <input type="text" name="adress" class="form-control" id="inputAddress" placeholder="House/Apt Name, Landmark, Location">
               </div>
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="inputState">Phone Number</label>
-                  <input type="text" class="form-control" placeholder="Enter your Phone Number" id="inputPhone" onkeyup="valid_phone();">
+                  <input type="text" name="phone" class="form-control" placeholder="Enter your Phone Number" id="inputPhone" onkeyup="valid_phone();">
                   <p id="p2"></p>
                 </div>
                 <div class="form-group col-md-6">
                   <label for="inputCity">City</label>
-                  <input type="text" class="form-control" id="inputCity" placeholder="Enter your City">
+                  <input type="text" name="city" class="form-control" id="inputCity" placeholder="Enter your City">
                   <p></p>
                 </div>
               </div>

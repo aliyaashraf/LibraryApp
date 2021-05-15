@@ -16,8 +16,9 @@ function router(nav) {
       title: req.body.title,
       author: req.body.author,
       genre: req.body.genre,
-      image: req.body.image,
-      description: req.body.description
+      description: req.body.description,
+      image: req.body.image
+      
     }
     var book = Bookdata(item);
     book.save();//saving to db

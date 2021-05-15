@@ -1,6 +1,6 @@
 const express = require("express");
 const addauthorRouter = express.Router();
-const Bookdata = require('../modal/Bookdata');
+const Authordata = require('../modal/Authordata');
 function router(nav) {
 
   addauthorRouter.get("/", function (req, res) {
@@ -12,13 +12,13 @@ function router(nav) {
   //for accessign from url we use colon :
   addauthorRouter.post("/add", function (req, res) {
     var item = {
-      name: req.body.name,
+      aname: req.body.aname,
       books: req.body.books,
-      description: req.body.description,
+      desc: req.body.desc,
       image: req.body.image
       
     }
-    var author = Bookdata(item);
+    var author = Authordata(item);
     author.save();//saving to db
     res.redirect('/authors');
 

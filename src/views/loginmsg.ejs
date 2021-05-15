@@ -1,41 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-		<meta charset="utf-8">
-		<title><%=title%></title>
-		<meta name="generator" content="Bootply" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<link href="css/bootstrap.min.css" rel="stylesheet">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title><%=title%></title>
+    <meta name="generator" content="Bootply" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
-    
-    <link rel="stylesheet" href="css/style_login.css">
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css'>
-    
     <!--[if lt IE 9]>
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-		<link href="css/styles.css" rel="stylesheet">
-	</head>
-	<body>
-<header class="navbar navbar-bright navbar-fixed-top" role="banner">
-  <div class="container">
-    <div class="navbar-header">
-      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a href="/" class="navbar-brand">Home</a>
-    </div>
-    <nav class="collapse navbar-collapse" role="navigation">
-      <ul class="nav navbar-nav">
-        <%for(i=0; i<nav3.length; i++){%>
-        <li>
-          <a href="<%=nav3[i].link%>"><%=nav3[i].name%></a>
-        </li>
-        <%}%>
+    <link href="/css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <header class="navbar navbar-bright navbar-fixed-top" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand">Home</a>
+            </div>
+            <nav class="collapse navbar-collapse" role="navigation">
+                <ul class="nav navbar-nav">
+                    <%for(i=0;i<nav3.length;i++){%>
+                    <li>
+                        <a href="<%=nav3[i].link%>"><%=nav3[i].name%></a>
+                    </li>
+                    <%}%>
       </ul>
     </nav>
   </div>
@@ -45,7 +43,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-7">
-        <h1>Log In
+        <h1>Library
           <p class="lead"></p>
         </h1>
       </div>
@@ -53,14 +51,14 @@
         <div class="well well-lg"> 
           <div class="row">
             <div class="col-sm-12">
-              
+             <!-- heading -->
 			
             </div>
           </div>
         </div>
       </div>
     </div> 
-  </div><!-- /cont -->
+  </div>
   
   <div class="container">
     <div class="row">
@@ -68,10 +66,8 @@
         <div class="top-spacer"> </div>
       </div>
     </div> 
-  </div><!-- /cont -->
-  
+  </div> 
 </div>
-
 
 <div class="container">
   <div class="row">
@@ -83,24 +79,9 @@
           
           
           
-          <!--/stories-->
-           <form class="inner_margin" method="POST" action="/login/add" onsubmit="return validate();">
-            <div class="form-group">
-                <label for="formGroupExampleInput"><b>Email</b></label>
-                <input type="text" name="mail" class="form-control" autocomplete="off" id="formGroupExampleInput" placeholder="Enter your mail" onkeyup="valid_email();">
-                <p id="p1"></p>
-            </div>
-            <div class="form-group">
-                <label for="formGroupExampleInput2"><b>Password</b></label>
-                <input type="password" name="password" class="form-control" autocomplete="off" id="formGroupExampleInput2" placeholder="Enter your password" onkeyup="valid_pwd();">
-                <p id="p2"></p>
-            </div>
-            <button type="submit" class="btn btn-primary">Log In</button>
-            <br>
-            <b>New here? <a href="/signup">SignUp</a></b>
-        </form>
-            <hr>
-          <!--/stories-->
+          <!--/message-->
+          <div id="message"> <h1>  <%=mssg%> </h1> </div>
+          <!--/message-->
         
           
         </div>
@@ -114,6 +95,8 @@
                                                 
                                                                                 
 <hr>
+
+                                                        
 
 <div class="container" id="footer">
   <div class="row">
@@ -155,6 +138,6 @@
 	<!-- script references -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/script_login.js"></script>
+    <script src="js/script_signup.js"></script>
 	</body>
 </html>

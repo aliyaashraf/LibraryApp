@@ -115,16 +115,20 @@
             <div class="form-row">
               <div class="form-group col-md-12">
                 <label for="title">Authors name</label>
-                <input type="text" class="form-control" name="author" placeholder="Enter Author" id="title"  onkeyup="valid_title();">
+                <input type="text" class="form-control" name="aname" placeholder="Enter Author" id="aname"  onkeyup="valid_aname();">
                 <p id="p1"></p>
               </div>
             </div>
             <div class="form-group col-md-12 field">
               <label for="inputPassword4">Well known books</label>
-              <input type="text" class="form-control" name="Wellknownbooks" placeholder="Enter popular books" id="author" onkeyup="valid_author();">
+              <input type="text" class="form-control" name="books" placeholder="Enter popular books" id="books" onkeyup="valid_books();">
               <p id="p2"></p>
             </div>
-            
+            <div class="form-group col-md-12">
+              <label for="inputAddress">Description</label>
+              <input type="text" class="form-control" name="desc" id="desc" placeholder="Enter content" onkeyup="valid_desc();">
+              <p id="p4"></p>
+            </div>
             <div class="form-group col-md-12">
               <label class="input-group-text" for="inputGroupFile02">Choose Authors image</label>
               <input type="file" class="form-control" name="image" id="inputGroupFile02" accept="image/*" required>
@@ -193,6 +197,6 @@
 	<!-- script references -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
-        <script src="js/script_bookform.js"></script>
+        <script src="js/script_authorform.js"></script>
 	</body>
 </html>
