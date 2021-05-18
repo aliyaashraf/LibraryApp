@@ -1,6 +1,26 @@
 const express = require("express");
 const addauthorRouter = express.Router();
 const Authordata = require('../modal/Authordata');
+
+const multer  = require('multer');
+const storage = multer.diskStorage({
+    destination: function(request, file, callback){
+        callback(null, './public/images');
+    },
+    filename: function(request, file, callback){
+        callback(null, file.originalname);
+    }
+});
+
+const upload = multer({
+    storage: storage
+});
+
+
+
+
+
+
 function router(nav) {
 
   addauthorRouter.get("/", function (req, res) {
