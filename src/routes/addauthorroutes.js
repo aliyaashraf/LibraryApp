@@ -8,8 +8,8 @@ const storage = multer.diskStorage({
         callback(null, './public/images');
     },
     filename: function(request, file, callback){
-        callback(null, file.originalname);
-    }
+        callback(null,Date.now() + file.originalname);
+    },
 });
 
 const upload = multer({
@@ -30,12 +30,12 @@ function router(nav) {
     });
   });
   //for accessign from url we use colon :
-  addauthorRouter.post("/add", function (req, res) {
+  addauthorRouter.post("/add", upload.single('image'),function (req, res) {
     var item = {
       aname: req.body.aname,
       books: req.body.books,
       desc: req.body.desc,
-      image: req.body.image
+      image: req.file.filename,
       
     }
     var author = Authordata(item);
