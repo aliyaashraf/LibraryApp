@@ -98,8 +98,13 @@
                   <small style="font-family:courier,'new courier';" class="text-muted"><%=book.genre%> •
                     <hr> 
                     <p  class="text-muted"> <%=book.description%> </p></small>
-                  </h4></div>
-                <div class="col-xs-3"></div>
+                  </h4>
+
+                  <a class="btn btn-info" href="edit/<%=book._id%>" ><i class="icon-fixed-width icon-pencil"></i>EDIT</a>  
+                  
+                  <a class="btn btn-danger" href="delete/<%=book._id%>" ><i class="icon-fixed-width icon-trash"></i>DELETE</a>
+
+                </div>
               </div> <br><br>
             </div> 
           </div>
@@ -151,6 +156,6 @@
 </footer>
 	<!-- script references -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
+		<script src="/js/bootstrap.min.js"></script>
 	</body>
 </html>

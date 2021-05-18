@@ -47,6 +47,46 @@ function router(nav) {
     });
     
   });
+
+
+  booksRouter.get('/edit/:id',(req, res)=> {
+    const id = req.params.id;
+    Bookdata.findOne({ _id: id })
+        .then(function(book) {
+            res.render('bookedit', {
+                nav,
+                title: 'Library',
+                book
+            });
+        });
+  });
+   
+  booksRouter.post('/edit/update/:id',(req,res)=>{
+    const id = req.params.id;
+    var item={
+      title: req.body.title,
+      author: req.body.author,
+      genre: req.body.genre,
+      description: req.body.description,
+      image: req.body.image  
+      
+    }
+    
+    Bookdata.findByIdAndUpdate({_id:id},item,function(req,res){
+  
+    });
+    res.redirect('/books')
+  });
+
+  booksRouter.get('/delete/:id',(req, res)=> {
+    const id = req.params.id;
+    Bookdata.deleteOne({ _id: id })
+        .then(function(book) {
+           
+            res.redirect('/books');
+        });
+  });
+    
   return booksRouter;
 }
 

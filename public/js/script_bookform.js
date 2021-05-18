@@ -3,8 +3,9 @@ var author = document.getElementById("author");
 var genre = document.getElementById("genre");
 var desc = document.getElementById("desc");
 
-function validate(){
-    let regexp = /^[a-zA-Z\s]*$/;
+function validate()
+{
+    let regexp = /^[A-Za-z0-9\s\-_,\.;:()]+$/;
     
     if(title.value.trim() == "" || author.value.trim() == "" || genre.value.trim() == "" || desc.value.trim() == ""){
         alert("Fields cannot be empty!");
@@ -18,7 +19,8 @@ function validate(){
         return false;
     }
 }
-function valid_title(){
+function valid_title()
+{
     let regexp = /^[a-zA-Z\s]*$/;
     if(regexp.test(title.value)){
         title.style.border= "3px solid green";
@@ -31,7 +33,8 @@ function valid_title(){
         p1.style.color = "red";
     }
 }
-function valid_author(){
+function valid_author()
+{
     let regexp = /^[a-zA-Z\s]*$/;
     if(regexp.test(author.value)){
         author.style.border= "3px solid green";
@@ -57,16 +60,17 @@ function valid_genre(){
         p3.style.color = "red";
     }
 }
-function valid_desc(){
-    let regexp = /^[\sa-zA-Z\s]+[.?!,':;"-]*$/;
+function valid_desc()
+{
+    let regexp = /^[A-Za-z0-9\s\-_,\.;:()]+$/;
     if(regexp.test(desc.value)){
         desc.style.border= "3px solid green";
         p4.innerHTML = "Valid!";
         p4.style.color = "green";
     }
-    else{
-        desc.style.border= "3px solid red";
+ else{
+         desc.style.border= "3px solid red";
         p4.innerHTML = "Invalid!";
-        p4.style.color = "red";
+       p4.style.color = "red";
     }
 }

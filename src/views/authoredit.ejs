@@ -6,12 +6,12 @@
 		<title><%=title%></title>
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="/css/bootstrap.min.css" rel="stylesheet">
 		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
 		<!--[if lt IE 9]>
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-		<link href="css/styles.css" rel="stylesheet">
+		<link href="/css/styles.css" rel="stylesheet">
 	</head>
 	<body>
 <header class="navbar navbar-bright navbar-fixed-top" role="banner">
@@ -51,7 +51,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-7">
-        <h1>Books
+        <h1>Edit Author
           <p class="lead"></p>
         </h1>
       </div>
@@ -90,33 +90,60 @@
           
           
           <!--/stories-->
-          <%for(i=0;i<books.length;i++){%>
-
-          
-          <div class="row">    
+         
+          <!-- <div class="row">    
             <br>
             <div class="col-md-2 col-sm-3 text-center">
-              <a class="story-title" href="#"><img alt="" src="/images/<%=books[i].image%>" style="width:100px;height:100px" class="img-circle"></a>
+                
             </div>
             <div class="col-md-10 col-sm-9">
-              <h3><%=books[i].title%></h3>
               <div class="row">
                 <div class="col-xs-9">
-                  <h4><span class="label label-default"><%=books[i].author%></span></h4><h4>
-                  <small style="font-family:courier,'new courier';" class="text-muted"><%=books[i].genre%> •<a href="/books/<%=books[i]._id%>" class="text-muted">Read More</a></small>
-                  </h4></div>
-                <div class="col-xs-3"></div>
+                    
+                
+                </div>
+                <div class="col-xs-3">
+
+                </div>
               </div>
               <br><br>
             </div>
           </div>
-        <%}%>
-          <hr>
+        
+          <hr> -->
+          <form method= "POST" action= "update/<%=author._id%>" onsubmit="return validate();">
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                <label for="title">Authors name</label>
+                <input type="text" class="form-control" name="aname" value="<%=author.aname%>" placeholder="Enter Author" id="aname"  onkeyup="valid_aname();">
+                <p id="p1"></p>
+              </div>
+            </div>
+            <div class="form-group col-md-12 field">
+              <label for="inputPassword4">Well known books</label>
+              <input type="text" class="form-control" name="books" value="<%=author.books%>" placeholder="Enter popular books" id="books" onkeyup="valid_books();">
+              <p id="p2"></p>
+            </div>
+            <div class="form-group col-md-12">
+              <label for="inputAddress">Description</label>
+              <input type="text" class="form-control" name="desc" value="<%=author.desc%>" id="desc" placeholder="Enter content" onkeyup="valid_desc();">
+              <p id="p4"></p>
+            </div>
+            <div class="form-group col-md-12">
+              <label class="input-group-text" for="inputGroupFile02">Choose Authors image</label>
+              <input type="file" class="form-control" name="image" id="inputGroupFile02" accept="image/*" required>
+            </div>
+            <div class="form-group col-md-12">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <a class="btn btn-info" href="/authors/<%=author._id%>" >Cancel</a>  
+          </div>
+          </form>
+          <hr>     
           
           <!--/stories-->
           
           
-          
+          <a href="/" class="btn btn-primary pull-right btnNext">More <i class="glyphicon glyphicon-chevron-right"></i></a>
         
           
         </div>
@@ -170,6 +197,7 @@
 </footer>
 	<!-- script references -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/script_authorform.js"></script>
 	</body>
 </html>

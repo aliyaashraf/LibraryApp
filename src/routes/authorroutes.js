@@ -45,6 +45,42 @@ function router(nav) {
     });
    
   });
+  authorsRouter.get('/edit/:id',(req, res)=> {
+    const id = req.params.id;
+    Authordata.findOne({ _id: id })
+        .then(function(author) {
+            res.render('authoredit', {
+                nav,
+                title: 'Library',
+                author
+            });
+        });
+  });
+   
+  authorsRouter.post('/edit/update/:id',(req,res)=>{
+    const id = req.params.id;
+    var item={
+      aname: req.body.aname,
+      books: req.body.books,
+      desc: req.body.desc,
+      image: req.body.image 
+      
+    }
+    
+    Authordata.findByIdAndUpdate({_id:id},item,function(req,res){
+  
+    });
+    res.redirect('/authors')
+  });
+
+  authorsRouter.get('/delete/:id',(req, res)=> {
+    const id = req.params.id;
+    Authordata.deleteOne({ _id: id })
+        .then(function(author) {
+           
+            res.redirect('/authors');
+        });
+  });
   return authorsRouter;
 }
 

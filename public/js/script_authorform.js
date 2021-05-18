@@ -3,7 +3,7 @@ var books = document.getElementById("books");
 var description = document.getElementById("desc");
 
 function validate(){
-    let regexp = /^[a-zA-Z\s]*$/;
+    let regexp = /^[A-Za-z0-9\s\-_,\.;:()]+$/;
     
     if(aname.value.trim() == "" || books.value.trim() == "" || description.value.trim() == ""){
         alert("Fields cannot be empty!");
@@ -44,16 +44,17 @@ function valid_books(){
     }
 }
 
-function valid_desc(){
-    // let regexp = /^[\sa-zA-Z\s]+[.?!,':;"-]*$/;
-    // if(regexp.test(desc.value)){
+function valid_desc()
+{
+    let regexp = /^[A-Za-z0-9\s\-_,\.;:()]+$/;
+    if(regexp.test(desc.value)){
         description.style.border= "3px solid green";
         p4.innerHTML = "Valid!";
         p4.style.color = "green";
-    //}
-    // else{
-    //     desc.style.border= "3px solid red";
-    //     p4.innerHTML = "Invalid!";
-    //     p4.style.color = "red";
-    // }
+    }
+ else{
+         desc.style.border= "3px solid red";
+        p4.innerHTML = "Invalid!";
+       p4.style.color = "red";
+    }
 }
